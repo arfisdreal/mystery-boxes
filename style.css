@@ -233,8 +233,11 @@ h2 { margin: 0; font-size: 16px; }
   letter-spacing: 0.06em;
 }
 
-.card.bonus { background: linear-gradient(135deg, rgba(0,178,122,0.92), rgba(0,178,122,0.65)); }
-.card.malus { background: linear-gradient(135deg, rgba(229,73,73,0.92), rgba(229,73,73,0.65)); }
+.card.bonus,
+.card.malus {
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+  border-color: rgba(255,255,255,0.14);
+}
 
 .card.disabled,
 .card.opened {
