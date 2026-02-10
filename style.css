@@ -235,7 +235,7 @@ h2 { margin: 0; font-size: 16px; }
 
 .card.bonus,
 .card.malus {
-  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+  background: linear-gradient(135deg, rgba(0, 152, 151,0.12), rgba(255,255,255,0.06));
   border-color: rgba(255,255,255,0.14);
 }
 
