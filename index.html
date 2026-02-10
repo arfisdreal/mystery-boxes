@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mystery Boxes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">?</div>
+        <div>
+          <div class="title">Mystery Boxes</div>
+          <div class="subtitle">Éditeur (haut) → HUD (bas)</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button id="btn-apply" class="btn primary">Appliquer</button>
+        <button id="btn-save" class="btn">Sauvegarder</button>
+        <button id="btn-load" class="btn">Charger</button>
+        <button id="btn-clear" class="btn danger">Tout vider</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- EDITOR -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Éditeur des cases (max 20)</h2>
+          <div class="hint">
+            Si une case n’est pas remplie, elle sera grise dans le HUD et
+            impossible à ouvrir.
+          </div>
+        </div>
+
+        <div id="editor-grid" class="editor-grid"></div>
+      </section>
+
+      <!-- HUD -->
+      <section class="panel">
+        <div class="panel-head hud-head">
+          <div>
+            <h2>HUD</h2>
+            <div class="hint">
+              Shuffle mélange les contenus. Choix aléatoire ouvre une case au
+              hasard. Reset remet l’état “non ouvert”.
+            </div>
+          </div>
+
+          <div class="hud-actions">
+            <button id="btn-shuffle" class="btn">Shuffle</button>
+            <button id="btn-random" class="btn primary">Choix aléatoire</button>
+            <button id="btn-reset" class="btn">Reset</button>
+          </div>
+        </div>
+
+        <div id="hud-grid" class="hud-grid"></div>
+      </section>
+    </main>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Révélation">
+        <div class="modal-top">
+          <div id="modal-badge" class="badge">BONUS</div>
+          <button id="modal-close" class="icon-btn" aria-label="Fermer">✕</button>
+        </div>
+
+        <div class="reveal">
+          <div class="flip">
+            <div class="flip-inner" id="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="qmark">?</div>
+                <div class="small">Ouverture...</div>
+              </div>
+              <div class="flip-face flip-back">
+                <div id="modal-text" class="modal-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="modal-ok" class="btn primary">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
